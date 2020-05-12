@@ -2,17 +2,12 @@ import os
 import numpy as np
 import pandas as pd
 import tempfile
-import pandapower as pp
-from pandapower.control import ConstControl
-from pandapower.timeseries import DFData
-from pandapower.timeseries import OutputWriter
-from pandapower.timeseries.run_time_series import run_timeseries
-import matplotlib.pyplot as plt
 import TimeSeries as ts
 import Network as n
-
+from K_Means import K_means
 
 # Time series, Generate training data for different operating states
+
 
 net = n.test_net()  # standard network
 net_hl = n.test_net_hl() # network high load: higher P and Q value for each load + noise
@@ -51,5 +46,12 @@ if not os.path.exists(output_dir):
     os.mkdir(output_dir)
 ts.timeseries(output_dir, net_no_l)
 
+# Now that we have the data sets, we can implement the k-means clustering algorithm
 
+# First, read the csv files
+
+dataset=pd.read_csv("iris.csv")
+
+
+K_means
 
