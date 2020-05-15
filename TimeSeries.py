@@ -45,8 +45,9 @@ def create_controllers(net, ds):
 def create_output_writer(net, time_steps, output_dir):
     ow = OutputWriter(net, time_steps, output_path=output_dir, output_file_type=".xls", log_variables=list())
     # these variables are saved to the harddisk after / during the time series loop
-    ow.log_variable('res_load', 'p_mw')
-    ow.log_variable('res_bus', 'vm_pu')
-    ow.log_variable('res_line', 'loading_percent')
-    ow.log_variable('res_line', 'i_ka')
+    ow.log_variable('res_bus', 'vm_pu') # bus voltage magnitude in pu
+    ow.log_variable('res_bus', 'va_degree') # bus voltage angle in degree
+    #ow.log_variable('res_line', 'loading_percent')
+    #ow.log_variable('res_line', 'i_ka')
+    #ow.log_variable('res_load', 'p_mw')
     return ow
