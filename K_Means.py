@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
-
 
 class K_Means:
     def __init__(self, k=3, tolerance=0.0001, max_iterations=300):
@@ -53,4 +50,5 @@ class K_Means:
                    isOptimal = False
                 if isOptimal:
                     break
+
 
