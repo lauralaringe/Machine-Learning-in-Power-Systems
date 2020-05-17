@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import messagebox
 from Network import *
 import pandapower as pd
+from tkinter import *
+
 
 
 def callback_network(*args):
@@ -100,5 +102,66 @@ labelTest.pack(side="top")
 
 app.mainloop()
 
+class choose_plot():
+    def __init__ (self, prompt):
+        self.prompt = prompt
+        self.response = ""
 
-plt.show()
+        def ok():
+            self.response = "1"
+            master.destroy()
+
+        def close():
+            master.destroy()
+
+        master = Tk()
+        lbl = Label(master, text=self.prompt)
+        lbl.pack()
+        butt = Button(master, text = "Yes", width = 10, command = ok)
+        butt.pack()
+        butt2 = Button(master, text="No", width=10, command=close)
+        butt2.pack()
+
+        mainloop()
+
+
+class input_k():
+    def __init__ (self, prompt):
+        self.prompt = prompt
+        self.response = ""
+
+        def ok():
+            self.response = entry.get()
+            master.destroy()
+
+        master = Tk()
+        lbl = Label(master, text=self.prompt)
+        lbl.pack()
+        entry = Entry(master)
+        entry.pack()
+
+        entry.focus_set()
+
+        butt = Button(master, text = "Submit", width = 10, command = ok)
+        butt.pack()
+
+        mainloop()
+
+
+
+class k_means_info():
+    master = tk.Tk()
+    intro = "What is the k-means clustering doing?"
+    msg = tk.Message(master, text=intro)
+    msg.config(bg='white', font=('times', 13))
+    msg.pack()
+    tk.mainloop()
+
+class knn_info():
+    master = tk.Tk()
+    intro = "What is the KNN algorithm doing?"
+    msg = tk.Message(master, text=intro)
+    msg.config(bg='white', font=('times', 13))
+    msg.pack()
+    tk.mainloop()
+

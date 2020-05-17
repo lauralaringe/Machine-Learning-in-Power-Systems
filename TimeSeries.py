@@ -47,7 +47,4 @@ def create_output_writer(net, time_steps, output_dir):
     # these variables are saved to the harddisk after / during the time series loop
     ow.log_variable('res_bus', 'vm_pu') # bus voltage magnitude in pu
     ow.log_variable('res_bus', 'va_degree') # bus voltage angle in degree
-    #ow.log_variable('res_line', 'loading_percent')
-    #ow.log_variable('res_line', 'i_ka')
-    #ow.log_variable('res_load', 'p_mw')
     return ow
