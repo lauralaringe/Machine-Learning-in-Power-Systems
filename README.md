@@ -9,8 +9,8 @@ KNN.py contains the functions for the KNN algorithm
 GUI.py containes classes and functions for the running the algorithm
 DatasetSetup.py contains the functions to generate the data, execute the time series, merge and normalize the data. It also contains the functions to plot the data.
 
-Running the main, the GUI will ask to choose the timesteps for running the timeseries, if nothing is chosen it will use n=70 as default.
-It will display the description of how the algorithms work. It will ask to plot the data, if yes is chose, it will show the voltage magnitude and angle plots for every state. It will ask to choose a k for the KNN algorithm. It is possible to try different k to check the accuracy until close botton is clicked.
+Running the main, at first the GUI will ask to choose a state and a node to display its information, then it will display the descriptions of how the algorithms are performed. Later, the GUI will ask to choose the timesteps for running the timeseries, if nothing is chosen it will use n=70 as default.
+It will ask to plot the data, if yes is chose, it will show the voltage magnitude and angle plots for every state. It will ask to choose a k for the KNN algorithm. It is possible to try different k to check the accuracy until close botton is clicked.
 
 The results of the algorithm can be seen in two ways:
 1. checking the 3 csv files generated: 1 will show the database, with the voltage and the operating state (df.csv), another one will show the k-means with a number on the right that will mean the classification of the object (k-means.py), and the last one will show the classification of the data with the feature for every object (knn.csv)
