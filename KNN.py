@@ -42,7 +42,7 @@ def get_accuracy(test_set, predictions):
 def knn(learning_set, test_set, k):
     predictions = []
     for test_instance in test_set:
-        neighbors = get_neighbors(learning_set, test_instance, k) #finds the nearest  neighbots in ascending order
+        neighbors = get_neighbors(learning_set, test_instance, k) #finds the nearest  neighbors in ascending order
         result = get_votes(neighbors) # gets the most voted feature
         predictions.append(result)
     accuracy = get_accuracy(test_set, predictions)

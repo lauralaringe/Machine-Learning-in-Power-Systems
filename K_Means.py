@@ -1,7 +1,7 @@
 import numpy as np
 
 class K_Means:
-    def __init__(self, k=3, tolerance=0.0001, max_iterations=300):
+    def __init__(self, k=6, tolerance=0.0001, max_iterations=400):
         self.k = k
         self.tolerance = tolerance
         self.max_iterations = max_iterations
@@ -50,5 +50,4 @@ class K_Means:
                    isOptimal = False
                 if isOptimal:
                     break
-
 

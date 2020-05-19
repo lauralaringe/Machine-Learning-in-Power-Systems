@@ -4,8 +4,6 @@ from Network import *
 import pandapower as pd
 from tkinter import *
 
-
-
 def callback_network(*args):
     labelTest.configure(text="Choose the node to display the information:")
     labelTest.configure(text ="name: {}" .format(variable.get()))
@@ -16,7 +14,6 @@ def callback_network(*args):
     opt.pack(side="top")
 
 def callback(*args):
-    #labelTest.configure(text ="element name: {}" .format(variable.get()))
     element = "{}".format(variable.get())
     if net_name == "test_net":
         net = test_net()
@@ -28,6 +25,8 @@ def callback(*args):
         net = test_net_no_gen()
     elif net_name == "test_net_no_l":
         net = test_net_no_l()
+    elif net_name == "test_net_no_load":
+        net = test_net_no_load()
 
     if element == "bus":
         print(net.bus)
@@ -74,7 +73,7 @@ def callback(*args):
                                                                                    " choose another "))
 
 
-OptionList = ["test_net", "test_net_hl", "test_net_ll", "test_net_no_gen", "test_net_no_l"]
+OptionList = ["test_net", "test_net_hl", "test_net_ll", "test_net_no_gen", "test_net_no_l", "test_net_no_load"]
 app = tk.Tk()
 app.geometry('700x400')
 
@@ -130,8 +129,12 @@ class input_k():
         self.prompt = prompt
         self.response = ""
 
-        def ok():
+        def submit():
             self.response = entry.get()
+            master.destroy()
+
+        def close():
+            self.response = 0
             master.destroy()
 
         master = Tk()
@@ -142,8 +145,10 @@ class input_k():
 
         entry.focus_set()
 
-        butt = Button(master, text = "Submit", width = 10, command = ok)
+        butt = Button(master, text = "Submit", width = 10, command = submit)
+        butt2 = Button(master, text = "Close", width = 10, command = close)
         butt.pack()
+        butt2.pack()
 
         mainloop()
 
@@ -151,16 +156,32 @@ class input_k():
 
 class k_means_info():
     master = tk.Tk()
-    intro = "What is the k-means clustering doing?"
-    msg = tk.Message(master, text=intro)
+    intro = "-What is the k-means clustering doing? \n \n Step 0: Prepare the data, shuffle it and normalize it\n \n" \
+            "Step 1: Randomly pick the first k centroids \n \n " \
+            "Step 2: Calculate the distance of each value from the centroids \n \n Step3: " \
+            "Store the centroid ID that is assigned to the datapoint which is closest to \n \n" \
+            "Step 4: Save previous centroids in a dictionary" \
+            "\n \n Step 5: Calculate new centroids location as the mean value of all the datapoints assigned " \
+            "to each cluster \n \n Step 6: Check if the algorithm reached the optimal value of the centroids \n" \
+            "\n Step 7: Go to step 3 "
+    msg = tk.Message(master, text=intro, width=800, justify='left')
     msg.config(bg='white', font=('times', 13))
     msg.pack()
     tk.mainloop()
 
 class knn_info():
     master = tk.Tk()
-    intro = "What is the KNN algorithm doing?"
-    msg = tk.Message(master, text=intro)
+    intro = "-What is the KNN algorithm doing? \n \n Step 0: Prepare the data, shuffle it and normalize it. " \
+            "It will be a learning set and a test set." \
+            "The test set is 20% of the dataset and the learning set is 80%\n \n " \
+            "Step 1: Given a i line of the test set calculate the distance between the test line and the learning data" \
+            "\n \n Step 2: Calculate the k closest neighbors and append in the list of neighbors in ascending order " \
+            "\n \n Step 3: Rank how many points belong to the same feature and take the first one" \
+            "\n \n Step 4: Go to step 1 with i+1 "
+
+
+    msg = tk.Message(master, text=intro,  width=800, justify='left')
+    #msg = tk.Message(master, text=intro)
     msg.config(bg='white', font=('times', 13))
     msg.pack()
     tk.mainloop()
