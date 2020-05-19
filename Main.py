@@ -6,6 +6,7 @@ from DatasetSetup import plot_data
 from K_Means import K_Means
 from KNN import knn
 from GUI import *
+from PCA_tSNE import t_SNE, pca
 
 
 df_all,dataset = get_dataset() # get the dataset from DatasetSetup
@@ -15,7 +16,8 @@ df_all,dataset = get_dataset() # get the dataset from DatasetSetup
 response = choose_plot("Do you want to plot the data of the dataset?").response
 if response == "1":
     plot_data(dataset)
-
+    t_SNE(dataset)
+    pca(df_all)
 df_all.to_csv('df.csv') # create a csv with the data not shuffled
 random.shuffle(dataset) # Shuffle data
 

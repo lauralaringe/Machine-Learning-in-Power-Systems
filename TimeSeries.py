@@ -7,19 +7,19 @@ from pandapower.timeseries import OutputWriter
 from pandapower.timeseries.run_time_series import run_timeseries
 from GUI import input_k
 
-n = input_k("Enter n to decide the number of time steps!").response
-if n is 0 or n is "":
-    flag = True
-    print("No value chosen. Executed with n=70")
-    n=70
-else:
-    n = int(n)
-    print("returned value is:", n)
+# n = input_k("Enter n to decide the number of time steps!").response
+# if n is 0 or n is "":
+#     flag = True
+#     print("No value chosen. Executed with n=70")
+#     n=70
+# else:
+#     n = int(n)
+#     print("returned value is:", n)
 
 def timeseries(output_dir, net):
 
     # create (random) data source
-    n_timesteps = n #with less timesteps, the knn algorithm will be less accurate
+    n_timesteps = 70 #with less timesteps, the knn algorithm will be less accurate
     profiles, ds = create_data_source(n_timesteps)
     # create controllers (to c#ontrol P values of the load and the gen)
     net = create_controllers(net, ds)
