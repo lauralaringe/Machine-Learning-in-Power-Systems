@@ -3,11 +3,7 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import numpy as np
-#from DatasetSetup import get_dataset
-
-#df,dataset = get_dataset() #get dataframe from dataset setup
 from sklearn.preprocessing import StandardScaler
-
 
 def t_SNE(dataset):
     X = np.delete(dataset, -1, axis=1)

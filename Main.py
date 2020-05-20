@@ -13,6 +13,7 @@ df_all,dataset = get_dataset() # get the dataset from DatasetSetup
 
 #plot the dataset with voltage magnitude as x and angles as y
 # the colors are different for each bus and every marker symbol is a different operating state
+# Execute PCA and tSNE and plots
 response = choose_plot("Do you want to plot the data of the dataset?").response
 if response == "1":
     plot_data(dataset)
