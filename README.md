@@ -1,5 +1,6 @@
 # Assignment-2-EH2745
-Solution of Assignment 2:
+
+## Usage
 
 Main.py contains the main file to run
 Network.py contains functions that return panda power networks for different operating states
@@ -14,6 +15,7 @@ Running the main, at first the GUI will ask to choose a state and a node to disp
 It will ask to plot the data, if yes is chose, it will show the voltage magnitude and angle plots for every state and also 2D visualization with PCA and tSNE techniques. It will ask to choose a k for the KNN algorithm. It is possible to try different k to check the accuracy until close botton is clicked.
 N.B. to run the algorithm firther, the windows from the GUI must be closed.
 
+## Results
 The results of the algorithm can be seen in two ways:
 1. checking the 3 csv files generated: 1 will show the database, with the voltage and the operating state (df.csv), another one will show the k-means with a number on the right that will mean the classification of the object (k-means.py), and the last one will show the classification of the data with the feature for every object (knn.csv)
 2. Checking the accuracy printed for the knn algorithm and the number of clusters created for the k-means clustering
