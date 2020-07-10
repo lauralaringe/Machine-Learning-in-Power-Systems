@@ -2,13 +2,20 @@
 
 ## Usage
 
-Main.py contains the main file to run
+Main.py contains the main file to run 
+
 Network.py contains functions that return panda power networks for different operating states
+
 TimeSeries.py contains the functions to run the timeseries 
+
 K_Means.py contains the k-means clustering algorithm
+
 KNN.py contains the functions for the KNN algorithm
+
 GUI.py containes classes and functions for the running the algorithm
+
 DatasetSetup.py contains the functions to generate the data, execute the time series, merge and normalize the data. It also contains the functions to plot the data.
+
 PCA_tSNE.py contains the code for the visualization of high-dimensional datasets. Since the dataset  in use is 18 dimensions, PCA and tSNE, that are techniques for dimensional reduction have been used to plot the dataset. (The techniques have been used only for visualization purpose)
 
 Running the main, at first the GUI will ask to choose a state and a node to display its information, then it will display the descriptions of how the algorithms are performed. Later, the GUI will ask to choose the timesteps for running the timeseries, if nothing is chosen it will use n=70 as default.
